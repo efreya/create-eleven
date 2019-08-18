@@ -1,0 +1,77 @@
+{
+  "name": "create-eleven",
+  "version": "0.1.0",
+  "description": "Create eleven project with all front library",
+  "homepage": "",
+  "author": {
+    "name": "efreya",
+    "email": "loneh2006@outlook.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "bin": {
+    "create-eleven": "cli.js"
+  },
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "clipboardy": "^2.1.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "https://github.com/efreya/create-eleven.git",
+  "license": "Apache-2.0"
+}
