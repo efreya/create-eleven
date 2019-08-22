@@ -7,11 +7,11 @@ const inquirer = require('inquirer');
 const clipboardy = require('clipboardy');
 
 const generators = fs
-    .readdirSync(`${__dirname}/../generators`)
+    .readdirSync(`${__dirname}/./generators`)
     .filter(f => !f.startsWith('.'))
     .map(f => {
         return {
-            name: `${f.padEnd(15)} - ${chalk.gray(require(`../generators/${f}/meta.json`).description)}`,
+            name: `${f.padEnd(15)} - ${chalk.gray(require(`./generators/${f}/meta.json`).description)}`,
             value: f,
             short: f,
         };
@@ -23,7 +23,7 @@ const runGenerator = async (generatorPath, { name = '', cwd = process.cwd(), arg
             mkdirp.sync(name);
             cwd = path.join(cwd, name);
         }
-        
+
         const Generator = require(generatorPath);
         const generator = new Generator({
             name,
@@ -58,8 +58,7 @@ const run = async config => {
             },
         ])
         .then(answers => {
-            console.log(answers);
-            return runGenerator(`../generators/${answers.type}`, config);
+            return runGenerator(`./generators/${answers.type}`, config);
         })
         .catch(e => {
             console.error(chalk.red(`> Generate failed`), e);

@@ -5,11 +5,10 @@ const semver = require('semver');
 const { existsSync } = require('fs');
 const { join } = require('path');
 const chalk = require('chalk');
-const run = require("./libs/run")
+const run = require("./run")
 
 // print version and @local
 const args = yParser(process.argv.slice(2));
-console.log(args);
 if (args.v || args.version) {
     console.log(require('./package').version);
     if (existsSync(join(__dirname, '.local'))) {

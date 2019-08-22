@@ -106,6 +106,10 @@ module.exports = class extends Generator {
   }
 
   install() {
-    //this.installDependencies();
+    const projectName = this.name || "./";
+    const projectPath = path.resolve(projectName);
+
+    process.chdir(projectPath);
+    this.installDependencies();
   }
 };

@@ -14,7 +14,7 @@
   "bin": {
     "create-eleven": "cli.js"
   },
-  "main": "generators/index.js",
+  "main": "libs/index.js",
   "keywords": [
     "yeoman-generator"
   ],
@@ -24,10 +24,13 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-xo": "^0.26.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "fs-extra": "^8.1.0",
     "husky": "^3.0.1",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
+    "sylvanas": "^0.4.1",
+    "typescript": "^3.5.3",
     "yeoman-assert": "^3.1.0",
     "yeoman-test": "^1.7.0"
   },
