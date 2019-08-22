@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const glob = require("glob");
 const { statSync, existsSync } = require("fs");
+const path = require("path");
 
 module.exports = class extends Generator {
 
